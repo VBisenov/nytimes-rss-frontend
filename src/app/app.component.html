@@ -1,0 +1,23 @@
+<header class="header" id="myHeader">
+    <div class="pub-date">{{weekdays[pubDate.getDay()] }}, {{ pubDate.getDate() }} {{ months[pubDate.getMonth()] }} {{ pubDate.getFullYear() }}</div>
+    <img (click)="redirect(this.link)" class="img" src="data:image/jpg;base64,{{image}}"/>
+    <!-- <button (click)="buttonClicked()" class="lang-changing">en/esp</button> -->
+</header>
+<div class="body">
+    <ul>
+        <li class="item" *ngFor="let item of items">
+            <div class = "main-section"
+            (click)="redirect(this.item.link)">
+                <div class="elements">
+                    <h5 class="pub-date">{{ months[pubDate.getMonth()].toUpperCase() }}. {{ pubDate.getDate() }}, {{ pubDate.getFullYear() }}</h5>
+                    <h1 class="title">{{item.title}}</h1>
+                    <h4 class="description">{{item.description}}</h4>
+                    <h6 class="creators">By {{item.creatorsNames}}</h6>
+                </div>
+            </div>
+            <div class = "image" (click)="redirect(this.item.link)">
+                <img *ngIf="item.image != null"src="data:image/jpg;base64,{{item.image}}"/>
+            </div>
+        </li>
+      </ul>
+</div>
