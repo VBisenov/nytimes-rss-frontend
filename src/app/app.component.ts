@@ -34,8 +34,8 @@ export class AppComponent {
       (error: HttpErrorResponse) => this.errorMessages.push(error.message));
   }
 
-  public redirect(link: string) {
-    window.location.href = link;
+  public openUrl(url: string) {
+    window.open(url, "_blank");
   }
 
   public buttonClicked() {
